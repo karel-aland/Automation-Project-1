@@ -14,7 +14,34 @@ Task list:
     * checkboxes, their content and links
     * email format
  */
+describe('Visual tests', () => {
+    it('Confirm that frequency of receving our newsletter list is correct', () => {
+        cy.get('input[type="radio"]').should('have.length', 4)
+        cy.get('input[type="radio"]').next().eq(0).should('have.text','Daily')
+        cy.get('input[type="radio"]').next().eq(1).should('have.text','Weekly')
+        cy.get('input[type="radio"]').next().eq(2).should('have.text','Monthly')
+        cy.get('input[type="radio"]').next().eq(3).should('have.text','Never')
+        cy.get('input[type="radio"]').eq(0).should('not.be.checked')
+        cy.get('input[type="radio"]').eq(1).should('not.be.checked')
+        cy.get('input[type="radio"]').eq(2).should('not.be.checked')
+        cy.get('input[type="radio"]').eq(3).should('not.be.checked')
+        cy.get('input[type="radio"]').eq(0).check().should('be.checked')
+        cy.get('input[type="radio"]').eq(1).check().should('be.checked')
+        cy.get('input[type="radio"]').eq(0).should('not.be.checked')
+    });
 
+    it.only('Confirm that checkbox list is correct', () => {
+        cy.get('input[type="checkbox"]').should('have.length', 2)
+        cy.get('input[type="checkbox"]').next().eq(1).should('have.text','Accept our cookie policy')
+        cy.get('input[type="checkbox"]').should('have.class','ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required')
+        cy.get('input[type="checkbox"]').eq(0).should('not.be.checked')
+        cy.get('input[type="checkbox"]').eq(1).should('not.be.checked')
+        cy.get('input[type="checkbox"]').eq(0).check().should('be.checked')
+        cy.get('input[type="checkbox"]').eq(1).check().should('be.checked')
+        cy.get('input[type="checkbox"]').eq(0).should('be.checked')
+
+    });
+});
 
 /*
 BONUS TASK: add functional tests for registration form 3
