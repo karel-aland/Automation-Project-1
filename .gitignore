@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules
 cypress/downloads
 cypress/screenshots
@@ -6,3 +7,16 @@ cypress/videos
 .DS_Store
 cypress/e2e/e2e-pom/issue-delete-in-pom_solutions.cy.js
 cypress/e2e/issue-create_solutions.cy.js
+=======
+/node_modules
+.idea
+.vs/
+cypress_simple_tests/.vs
+/allure-report
+/allure-results
+/cypress/videos/*.mp4
+/cypress/screenshots/*
+cypress/e2e/registration_form_2_solutions.cy.js
+cypress/e2e/registration_form_1_test_solutions.cy.js
+cypress/e2e/registration_form_3_solutions.cy.js
+>>>>>>> f39375df4bd3fa25616f647845a3c52ab4570160

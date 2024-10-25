@@ -1,15 +1,30 @@
 {
+<<<<<<< HEAD
   "name": "jira-clone-tests",
+=======
+  "name": "cypresstutorial",
+>>>>>>> f39375df4bd3fa25616f647845a3c52ab4570160
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
+=======
+  "keywords": [],
+>>>>>>> f39375df4bd3fa25616f647845a3c52ab4570160
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
+<<<<<<< HEAD
     "cypress": "^13.15.0"
+=======
+    "cypress": "^13.4.0"
+  },
+  "dependencies": {
+    "faker": "^5.5.3"
+>>>>>>> f39375df4bd3fa25616f647845a3c52ab4570160
   }
 }

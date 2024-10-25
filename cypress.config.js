@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
@@ -13,3 +14,20 @@ module.exports = defineConfig({
     requestTimeout: 20000,
   },
 });
+=======
+const {defineConfig} = require("cypress");
+
+module.exports = defineConfig({
+    pageLoadTimeout: 15000,
+
+    env: {
+        firstCookieValue: "firstValue",
+    },
+
+    e2e: {
+        setupNodeEvents(on, config) {
+            return config;
+        }
+    },
+});
+>>>>>>> f39375df4bd3fa25616f647845a3c52ab4570160

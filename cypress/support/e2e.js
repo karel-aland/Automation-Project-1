@@ -1,5 +1,9 @@
 // ***********************************************************
+<<<<<<< HEAD
 // This example support/e2e.js is processed and
+=======
+// This example support/index.js is processed and
+>>>>>>> f39375df4bd3fa25616f647845a3c52ab4570160
 // loaded automatically before your test files.
 //
 // This is a great place to put global configuration and
@@ -17,4 +21,8 @@
 import './commands'
 
 // Alternatively you can use CommonJS syntax:
+<<<<<<< HEAD
 // require('./commands')
+=======
+// require('./commands')
+>>>>>>> f39375df4bd3fa25616f647845a3c52ab4570160
