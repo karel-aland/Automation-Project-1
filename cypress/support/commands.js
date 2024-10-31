@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+let HEAD
 // We don't want to waste time when running e2e on cypress waiting for debounced
 // inputs. We can use tick() to speed up time and trigger onChange immediately.
 Cypress.Commands.add('debounced', { prevSubject: true }, (input, action, value) => {
@@ -20,7 +20,7 @@ Cypress.Commands.add('assertReloadAssert', (assertFunc) => {
     funcThatTriggersXHR();
     cy.wait(`@${alias}`);
   });
-=======
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -46,4 +46,7 @@ Cypress.Commands.add('assertReloadAssert', (assertFunc) => {
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
->>>>>>> f39375df4bd3fa25616f647845a3c52ab4570160
+it('Commands', () => {
+  const testId = 'f39375df4bd3fa25616f647845a3c52ab4570160';
+});
+

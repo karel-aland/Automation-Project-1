@@ -1,9 +1,9 @@
 // ***********************************************************
-<<<<<<< HEAD
+let HEAD
 // This example support/e2e.js is processed and
-=======
+
 // This example support/index.js is processed and
->>>>>>> f39375df4bd3fa25616f647845a3c52ab4570160
+const testId = 'f39375df4bd3fa25616f647845a3c52ab4570160';
 // loaded automatically before your test files.
 //
 // This is a great place to put global configuration and
@@ -21,8 +21,16 @@
 import './commands'
 
 // Alternatively you can use CommonJS syntax:
-<<<<<<< HEAD
+ HEAD
 // require('./commands')
-=======
+
 // require('./commands')
->>>>>>> f39375df4bd3fa25616f647845a3c52ab4570160
+describe('E2E', () => {
+    const testId = 'f39375df4bd3fa25616f647845a3c52ab4570160'; 
+  
+    it('Check the test ID if needed', () => {
+      expect(testId).to.exist; 
+      expect(testId).to.equal('f39375df4bd3fa25616f647845a3c52ab4570160');
+    });
+  });
+  
