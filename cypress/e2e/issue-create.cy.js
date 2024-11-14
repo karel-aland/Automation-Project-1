@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+
 describe('Issue create', () => {
   beforeEach(() => {
     cy.visit('/');
@@ -90,7 +91,7 @@ describe('Issue create', () => {
           .find('p')
           .contains('Bug')
           });    
-});
+  });
 
   it('Test Case 2 - Random data plugin issue creation', () => {
     const randomTitle = faker.word.noun(); 
@@ -123,5 +124,30 @@ describe('Issue create', () => {
           .find('p')
           .contains(randomTitle)
           });    
+  });
+
+  it.only('Test Case 3 - remove unnecessary spaces from the issue title on the board', () => {
+    const titleWithSpaces = '   Hello   world!  ';
+    const regularTitle = 'Hello world!';
+
+    cy.get('[data-testid="modal:issue-create"]').within(() => {
+      cy.get('input[name="title"]').type(titleWithSpaces);
+      cy.get('.ql-editor').type('A description for the issue');
+      cy.get('button[type="submit"]').click();
+    });
+
+    cy.get('[data-testid="modal:issue-create"]').should('not.exist');
+    cy.contains('Issue has been successfully created.').should('be.visible');
+    cy.reload();
+    cy.contains('Issue has been successfully created.').should('not.exist');
+    cy.get('[data-testid="board-list:backlog"]').should('be.visible')
+      .within(() => {
+        cy.get('[data-testid="list-issue"]').first().find('p')
+          .invoke('text') 
+          .then((issueText) => {
+            const normalizedTitle = issueText.replace(/\s+/g, ' ').trim();
+            expect(regularTitle).to.equal(regularTitle);
+          });
+      });
 });
 });
